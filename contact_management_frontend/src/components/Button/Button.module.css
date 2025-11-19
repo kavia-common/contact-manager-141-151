@@ -1,0 +1,128 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  outline: none;
+  position: relative;
+  user-select: none;
+  font-family: inherit;
+  gap: 0.5em;
+}
+
+/* Variants */
+.variant-primary {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.variant-primary:hover:not(.disabled):not(.loading),
+.variant-primary:focus-visible:not(.disabled):not(.loading) {
+  background: #2563eb;
+  box-shadow: 0 0 0 3px #b6dbff4d;
+}
+
+.variant-secondary {
+  background: #64748b;
+  color: #fff;
+}
+
+.variant-secondary:hover:not(.disabled):not(.loading),
+.variant-secondary:focus-visible:not(.disabled):not(.loading) {
+  background: #475569;
+  box-shadow: 0 0 0 3px #caced4;
+}
+
+.variant-danger {
+  background: hsl(0 84% 60%);
+  color: #fff;
+}
+
+.variant-danger:hover:not(.disabled):not(.loading),
+.variant-danger:focus-visible:not(.disabled):not(.loading) {
+  background: hsl(0 84% 40%);
+  box-shadow: 0 0 0 3px #f8bbbb70;
+}
+
+.variant-ghost {
+  background: transparent;
+  color: #3b82f6;
+  border: 1px solid #3b82f6;
+}
+
+.variant-ghost:hover:not(.disabled):not(.loading),
+.variant-ghost:focus-visible:not(.disabled):not(.loading) {
+  background: #e0ecfb;
+  color: #2563eb;
+  box-shadow: 0 0 0 3px #b6dbff4d;
+}
+
+/* Sizes */
+.size-sm {
+  font-size: 0.875rem;
+  padding: 0.375em 1em;
+  min-height: 2.125em;
+}
+
+.size-md {
+  font-size: 1rem;
+  padding: 0.5em 1.5em;
+  min-height: 2.5em;
+}
+
+.size-lg {
+  font-size: 1.125rem;
+  padding: 0.75em 2em;
+  min-height: 2.875em;
+}
+
+/* Loading spinner */
+.spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top-color: #3b82f6;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+}
+
+.variant-secondary .spinner,
+.variant-danger .spinner {
+  border-top-color: #fff;
+}
+
+.variant-ghost .spinner {
+  border: 2px solid #3b82f6;
+  border-top-color: #2563eb;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loadingText {
+  opacity: 0.65;
+}
+
+/* Disabled styles */
+.disabled, .btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #b2bac6 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
